@@ -42,4 +42,5 @@ various accessory codes for data formatting, display, and analysis.
   changes to the command-line interface, and the option to install analysis
   scripts as system-wide executables.
 
-To obtain previous distributions, please contact Dr. Rama Ranganathan.
+:SCA Toolbox 6.2:
+  Bugfix release.

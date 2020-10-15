@@ -1,10 +1,11 @@
 # pySCA
 
-![Website Build Status](https://gitlab.com/ranganathanlab/pySCA/badges/master/pipeline.svg)
+![Website Build Status](https://gitlab.com/sudorook/pysca/badges/master/pipeline.svg)
 
-> 09.2020
+> 10.2020
 >
-> Copyright (C) 2019 Olivier Rivoire, Rama Ranganathan, and Kimberly Reynolds
+> Copyright (C) 2020 Olivier Rivoire, Rama Ranganathan, and Kimberly Reynolds,
+> and Ansel George
 >
 > This program is free software distributed under the BSD 3-clause license,
 > please see the file LICENSE for details.
@@ -18,9 +19,7 @@ Jupyter notebooks; for details please see:
 [https://jupyter.org/](https://jupyter.org/).
 
 For installation instructions, and an introduction to using the toolbox, please
-refer to the website:
-
-[https://ranganathanlab.gitlab.io/pySCA](https://ranganathanlab.gitlab.io/pySCA)
+[refer to the website](https://sudorook.gitlab.io/pysca).
 
 or look through the [RST files](docs/source) included with the pySCA
 distribution.

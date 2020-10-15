@@ -1,4 +1,4 @@
-SCA 6.1 - The S1A Serine Proteases
+SCA 6.2 - The S1A Serine Proteases
 ==================================
 
 **Summary:** This script repeats the analysis of the S1A serine protease
@@ -35,8 +35,6 @@ executed from the command line as follows:
 
 Note that we supply pre-annotated alignments for all tutorial scripts
 *(the annotate_pfMSA step is slow, and should only be run once)*.
-
-**O.Rivoire, K.Reynolds and R.Ranganathan** 10/2015
 
 .. code:: python3
 

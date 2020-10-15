@@ -6,8 +6,8 @@ set -eu
 datadir=data
 outputdir=output
 
-datarepo="https://github.com/ranganathanlab/pySCA-data"
-version=6.1
+datarepo="https://github.com/sudorook/pySCA-data"
+version=6.2
 
 # Download the data
 

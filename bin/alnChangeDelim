@@ -11,10 +11,8 @@ format).
     --old-delim          delimiter separating header fields, default: "_"
     --new-delim          delimiter separating header fields
 
-:By: Kim Reynolds
-:On: 6.5.2015
-
-Copyright (C) 2015 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds
+Copyright (C) 2020 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds, and
+Ansel George
 
 This program is free software distributed under the BSD 3-clause
 license, please see the file LICENSE for details.

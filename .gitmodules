@@ -1,3 +1,3 @@
 [submodule "data"]
 	path = data
-	url = https://gitlab.com/ranganathanlab/pySCA-data.git
+	url = git@gitlab.com:sudorook/pySCA-data.git

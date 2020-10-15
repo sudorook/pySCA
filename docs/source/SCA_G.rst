@@ -1,4 +1,4 @@
-SCA 6.1 - The G Protein Family
+SCA 6.2 - The G Protein Family
 ==============================
 
 **Summary:** This script describes the basic flow of analytical steps in
@@ -59,8 +59,6 @@ executed from the command line as follows:
 
 Note that we supply pre-annotated alignments for all tutorial scripts
 *(the annotate_pfMSA step is slow, and should only be run once)*.
-
-**O.Rivoire, K.Reynolds and R.Ranganathan** 1/2015
 
 .. code:: python3
 

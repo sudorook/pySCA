@@ -321,7 +321,7 @@ The following steps are optional but highly recommended:
 ================
 
 The pySCA package, tutorials, and associated scripts are available for download
-from the `GitHub repository <https://github.com/ranganathanlab/pySCA>`_. There
+from the `GitHub repository <https://github.com/sudorook/pySCA>`_. There
 are several options for doing so.
 
 A. Use Git
@@ -332,7 +332,7 @@ repository from GitHub. From the command line, run:
 
 .. code-block:: bash
 
-   git clone https://github.com/ranganathanlab/pySCA.git
+   git clone https://github.com/sudorook/pySCA.git
 
 For development and troubleshooting purposes, using Git is preferred.
 
@@ -348,7 +348,7 @@ latest code.
 .. image:: _static/github-download-screenshot.png
 
 In the event that you need older versions of the code, you can use the
-`releases <https://github.com/ranganathanlab/pySCA/releases>`_ tab on the
+`releases <https://github.com/sudorook/pySCA/releases>`_ tab on the
 GitHub page to download older tagged version.
 
 4. (OPTIONAL) Modify Settings

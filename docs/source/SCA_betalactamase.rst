@@ -1,4 +1,4 @@
-SCA 6.1 - The Beta-lactamase Enzyme Family
+SCA 6.2 - The Beta-lactamase Enzyme Family
 ==========================================
 
 This script describes the basic flow of the analytical steps in SCA6.0,
@@ -19,8 +19,6 @@ scripts should be run as follows:
 
 Note that we supply annotated alignments for all tutorial scripts *(the
 annotate_pfMSA step is slow, and should only be run once)*.
-
-**O.Rivoire, K.Reynolds and R.Ranganathan** 9/2014
 
 .. code:: python3
 

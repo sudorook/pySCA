@@ -43,10 +43,8 @@ alignment.
   annotateMSA -i PF00186_full.txt -o PF00186_full.an -a 'pfam'
   annotateMSA -i DHFR_PEPM3.fasta -o DHFR_PEPM3.an -a 'ncbi' -l DHFR_PEPM3.gi
 
-:By: Rama Ranganathan, Kim Reynolds
-:On: 9.22.2014
-
-Copyright (C) 2015 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds
+Copyright (C) 2020 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds, and
+Ansel George
 
 This program is free software distributed under the BSD 3-clause license,
 please see the file LICENSE for details.

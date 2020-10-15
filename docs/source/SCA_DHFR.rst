@@ -1,4 +1,4 @@
-SCA 6.1 - The DHFR (dihydrofolate reductase) family
+SCA 6.2 - The DHFR (dihydrofolate reductase) family
 ===================================================
 
 **Summary** This script describes the basic flow of the analytical steps
@@ -28,8 +28,6 @@ command line as follows:
 
 Note that we supply annotated alignments for all tutorial scripts *(the
 annotate_pfMSA step is slow, and should only be run once)*.
-
-**O.Rivoire, K.Reynolds and R.Ranganathan** 9/2014
 
 .. code:: python3
 

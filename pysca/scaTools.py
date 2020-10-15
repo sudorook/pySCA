@@ -8,10 +8,11 @@ pySCA - A SCA toolbox in Python
 | Kimberly Reynolds (kimberly.reynolds@utsouthwestern.edu)
 | Rama Ranganathan (rama.ranganathan@utsouthwestern.edu)
 
-:On:  August 2014
-:version: 6.1
+:On:  October 2020
+:version: 6.2
 
-Copyright (C) 2015 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds
+Copyright (C) 2020 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds, and
+Ansel George
 
 This program is free software distributed under the BSD 3-clause license,
 please see the file LICENSE for details.

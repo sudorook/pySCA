@@ -77,10 +77,8 @@ tool pickle:
 
   scaProcessMSA -a PF00071_full.an -s 5P21 -c A -f 'Homo sapiens'
 
-:By: Rama Ranganathan
-:On: 8.5.2014
-
-Copyright (C) 2015 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds
+Copyright (C) 2020 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds, and
+Ansel George
 
 This program is free software distributed under the BSD 3-clause license,
 please see the file LICENSE for details.

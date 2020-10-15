@@ -41,10 +41,8 @@ using the Python tool pickle. These calculations can be divided into two parts:
 
   scaCore -i PF00071_full.db
 
-:By: Rama Ranganathan, Kim Reynolds
-:On: 8.5.2014
-
-Copyright (C) 2015 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds
+Copyright (C) 2020 Olivier Rivoire, Rama Ranganathan, Kimberly Reynolds, and
+Ansel George
 
 This program is free software distributed under the BSD 3-clause license,
 please see the file LICENSE for details.
