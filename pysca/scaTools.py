@@ -197,7 +197,7 @@ def AnnotPfam(
             try:
                 info = seq_info[key]
             except BaseException as e:
-                print("Error: " + str(e))
+                print("Error: " + str(e), file=sys.stderr)
                 info = "\t".join(["unknown"] * 10 + ["unknown;unknown"])
             # this f.write line works with older pfamseq.txt files (release 4 and
             # before, was used to annotate the tutorial alignments
@@ -518,7 +518,7 @@ def MSAsearch(hd, algn, seq, species=None):
         os.remove("tmp_algn_seq.fasta")
         return strseqnum
     except BaseException as e:
-        print("Error: " + str(e))
+        print("Error: " + str(e), file=sys.stderr)
         try:
             from Bio.Emboss.Applications import NeedleCommandline
 
@@ -561,7 +561,7 @@ def MSAsearch(hd, algn, seq, species=None):
             os.remove("tmp_neelde_seq.fasta")
             return strseqnum
         except BaseException as e:
-            print("Error: " + str(e))
+            print("Error: " + str(e), file=sys.stderr)
             print("Trying MSASearch with BioPython")
             score = list()
             for k, s in enumerate(algn):
@@ -2172,7 +2172,7 @@ def pdbSeq(pdbid, chain="A", path2pdb=settings.path2structures, calcDist=1):
         try:
             sequence += aatable[res.get_resname()]
         except BaseException as e:
-            print("Error: " + str(e))
+            print("Error: " + str(e), file=sys.stderr)
             sequence += "X"
 
     # Distances between residues (minimal distance between atoms, in angstrom):
