@@ -308,6 +308,37 @@ def AnnotPfamDB(
     print("Elapsed time: %.1f min" % ((end_time - start_time) / 60))
 
 
+def EsummaryLookup(id_list, bad_list = [], email=settings.entrezemail):
+    """
+    Wrapper function for looking up taxonomy IDs from the NCBI protein
+    database. If an ID isn't found, the web query returns with an error, so
+    this function will recursively remove invalid IDs, returning a list of
+    valid query return values and a list of invalid IDS.
+    """
+
+    # If all IDs are bad, they will be recursively pruned until the list is
+    # empty. Reutrn immediately if that happens.
+    if len(id_list) == 0:
+        return id_list, bad_list
+
+    Entrez.email = email  # PLEASE use your email! (see settings.py)
+    handle = Entrez.esummary(db="protein", id=",".join(id_list))
+    time.sleep(0.33)
+
+    try:
+        taxon_list = Entrez.read(handle)
+        handle.close()
+    except RuntimeError as e:
+        print(e, file=sys.stderr)
+        bad_id=str(e).split(" ")[2]
+        bad_list.append(bad_id)
+        bad_idx=id_list.index(bad_id)
+        id_list.remove(bad_id)
+        taxon_list, bad_list = EsummaryLookup(id_list, bad_list)
+        taxon_list.insert(bad_idx, {'TaxId': 1})
+    return taxon_list, bad_list
+
+
 def AnnotNCBI(
     alg_in, alg_out, id_list, email=settings.entrezemail, delimiter="|"
 ):
@@ -352,14 +383,13 @@ def AnnotNCBI(
         seq_ids[x : x + id_blocksize]
         for x in range(0, len(seq_ids), id_blocksize)
     ]
+    bad_ids = []
 
     taxIDs = list()
+    print("Looking up Tax IDs...")
     start = time.time()
     for i, id_block in enumerate(id_blocks):
-        handle = Entrez.esummary(db="protein", id=",".join(id_block))
-        time.sleep(0.33)
-        taxonList = Entrez.read(handle)
-        handle.close()
+        taxonList, bad_ids = EsummaryLookup(id_block, bad_ids)
         for j, taxon in enumerate(taxonList):
             if taxon["TaxId"]:
                 taxIDs.append(str(taxon["TaxId"]))
@@ -367,6 +397,9 @@ def AnnotNCBI(
                 print("TaxId not found for %s" % id_block[j])
                 taxIDs.append("1")
     end = time.time()
+
+    print("The following NCBI IDs could not be found in the taxonomy database:")
+    print(bad_ids)
 
     # Add back taxID of 1 (the root of the taxonomic tree) for sequences
     # without an ID.
