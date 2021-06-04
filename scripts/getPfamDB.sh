@@ -58,9 +58,7 @@ echo "Done!"
 # converted to a format compatible with SQLite3.
 
 echo "Converting the MySQL dump to SQLite3."
-git clone --depth 1 https://github.com/dumblob/mysql2sqlite.git
-./mysql2sqlite/mysql2sqlite "${pfamheaders}" | sqlite3 "${pfamdb}"
-rm -rf mysql2sqlite
+./mysql2sqlite "${pfamheaders}" | sqlite3 "${pfamdb}"
 
 echo "Importing data."
 sqlite3 -batch "${pfamdb}" << "EOF"
