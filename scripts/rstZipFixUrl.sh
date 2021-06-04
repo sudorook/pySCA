@@ -24,7 +24,7 @@ set -eu
 docsdir="../docs/source"
 docsstaticdir="_static"
 
-filename=$(basename ${1%.*})
+filename=$(basename "${1%.*}")
 extension=${1##*.}
 
 if [[ "${extension}" != "zip" ]]; then
@@ -34,21 +34,21 @@ fi
 
 tmpdir=tmp_${filename}
 
-mkdir -p ${tmpdir}
-cd ${tmpdir}
+mkdir -p "${tmpdir}"
+cd "${tmpdir}"
 
-unzip ../${1}
+unzip ../"${1}"
 
-sed -i "s,output_\([0-9_]\+\).png,${docsstaticdir}/${filename}_\1.png,g" ${filename}.rst
-sed -i "s,^\.\. code:: ipython3,\.\. code:: python3,g" ${filename}.rst
+sed -i "s,output_\([0-9_]\+\).png,${docsstaticdir}/${filename}_\1.png,g" "${filename}.rst"
+sed -i "s,^\.\. code:: ipython3,\.\. code:: python3,g" "${filename}.rst"
 for png in *.png; do
-  newpng=$(echo ${png} | sed -e "s/output_\([0-9_]\+\).png/${filename}_\1.png/g")
-  mv ${png} ${newpng}
+  newpng=$(echo "${png}" | sed -e "s/output_\([0-9_]\+\).png/${filename}_\1.png/g")
+  mv "${png}" "${newpng}"
 done
 
 cd ../
 
-mv ${tmpdir}/${filename}.rst ${docsdir}/
-mv ${tmpdir}/${filename}_*.png ${docsdir}/${docsstaticdir}/
+mv "${tmpdir}/${filename}.rst" ${docsdir}/
+mv "${tmpdir}/${filename}"_*.png ${docsdir}/${docsstaticdir}/
 
-rmdir ${tmpdir}
+rmdir "${tmpdir}"

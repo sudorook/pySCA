@@ -1,5 +1,5 @@
 #! /bin/bash
-set -eu
+set -euo pipefail
 
 #
 # The Pfam annotation script is much, much faster when using a database instead
@@ -61,7 +61,7 @@ echo "Converting the MySQL dump to SQLite3."
 ./mysql2sqlite "${pfamheaders}" | sqlite3 "${pfamdb}"
 
 echo "Importing data."
-sqlite3 -batch "${pfamdb}" << "EOF"
+sqlite3 -batch "${pfamdb}" << EOF
 .separator "\t"
 .import pfamseq.txt pfamseq
 EOF
