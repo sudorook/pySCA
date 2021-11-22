@@ -10,19 +10,23 @@ set -euo pipefail
 # SQLite3 has to create key-value pairs for over 40 million sequences, and it
 # is VERY, VERY slow.
 #
-# Dependencies: wget, sqlite3, awk, and gzip or pigz
+# Dependencies:
+# - wget
+# - sqlite3
+# - awk
+# - gzip or pigz
 #
 
 #
 # Globals
 #
 
-pfamurl="ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files"
-pfamheaders="pfamseq.sql"
-pfamdata="pfamseq.txt"
-pfamdb="pfamseq.db"
+PFAMURL="ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files"
+PFAMHEADERS="pfamseq.sql"
+PFAMDATA="pfamseq.txt"
+PFAMDB="pfamseq.db"
 
-gzip=gzip  # replace this value with whatever gzip compression tool you use
+GZIP=pigz  # replace this value with whatever GZIP compression tool you use
 
 
 #
@@ -34,17 +38,17 @@ echo "Requires ~90 GB of free storage and could take several hours."
 
 echo "Downloading the Pfam annotated sequence data."
 
-wget -Nc "${pfamurl}/${pfamheaders}.gz"
-wget -Nc "${pfamurl}/${pfamdata}.gz"
+wget -Nc "${PFAMURL}/${PFAMHEADERS}.gz"
+wget -Nc "${PFAMURL}/${PFAMDATA}.gz"
 echo "Got 'em."
 
 echo "Decompress the gzipped files."
 echo "This will take a while."
-if test "$(command -v ${gzip})"; then
-  ${gzip} -vd "${pfamheaders}.gz"
-  ${gzip} -vd "${pfamdata}.gz"
+if test "$(command -v ${GZIP})"; then
+  ${GZIP} -vd "${PFAMHEADERS}.gz"
+  ${GZIP} -vd "${PFAMDATA}.gz"
 else
-  echo "${gzip} not found. Exiting."
+  echo "${GZIP} not found. Exiting."
   exit 3
 fi
 echo "Done!"
@@ -58,10 +62,10 @@ echo "Done!"
 # converted to a format compatible with SQLite3.
 
 echo "Converting the MySQL dump to SQLite3."
-./mysql2sqlite "${pfamheaders}" | sqlite3 "${pfamdb}"
+./mysql2sqlite "${PFAMHEADERS}" | sqlite3 "${PFAMDB}"
 
 echo "Importing data."
-sqlite3 -batch "${pfamdb}" << EOF
+sqlite3 -batch "${PFAMDB}" << EOF
 .separator "\t"
 .import pfamseq.txt pfamseq
 EOF

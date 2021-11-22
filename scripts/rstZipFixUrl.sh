@@ -8,8 +8,8 @@ set -eu
 # file, which will cause naming clashes when including multiple notebooks, each
 # with different images, to the _static folder.
 #
-# This script will take the filename of the zip file, extract its contents,
-# rename the images from 'output' to '<filename>', and update the URLS in the
+# This script will take the FILENAME of the zip file, extract its contents,
+# rename the images from 'output' to '<FILENAME>', and update the URLS in the
 # RST files.
 #
 # Input:
@@ -21,34 +21,33 @@ set -eu
 #   ./rstZipFixUrl.sh <path to zip>
 #
 
-docsdir="../docs/source"
-docsstaticdir="_static"
+DOCS_DIR="../docs/source"
+DOCS_STATIC_DIR="_static"
 
-filename=$(basename "${1%.*}")
-extension=${1##*.}
+FILENAME=$(basename "${1%.*}")
+EXTENSION=${1##*.}
 
-if [[ "${extension}" != "zip" ]]; then
+if [[ "${EXTENSION}" != "zip" ]]; then
   echo "ERROR: Input is not a zipped archive."
   exit 3
 fi
 
-tmpdir=tmp_${filename}
+TMPDIR=tmp_${FILENAME}
 
-mkdir -p "${tmpdir}"
-cd "${tmpdir}"
+mkdir -p "${TMPDIR}"
+cd "${TMPDIR}"
 
 unzip ../"${1}"
 
-sed -i "s,output_\([0-9_]\+\).png,${docsstaticdir}/${filename}_\1.png,g" "${filename}.rst"
-sed -i "s,^\.\. code:: ipython3,\.\. code:: python3,g" "${filename}.rst"
-for png in *.png; do
-  newpng=$(echo "${png}" | sed -e "s/output_\([0-9_]\+\).png/${filename}_\1.png/g")
-  mv "${png}" "${newpng}"
+sed -i "s,output_\([0-9_]\+\).png,${DOCS_STATIC_DIR}/${FILENAME}_\1.png,g" "${FILENAME}.rst"
+sed -i "s,^\.\. code:: ipython3,\.\. code:: python3,g" "${FILENAME}.rst"
+for PNG in *.png; do
+  mv "${PNG}" "${PNG//output/${FILENAME}}"
 done
 
 cd ../
 
-mv "${tmpdir}/${filename}.rst" ${docsdir}/
-mv "${tmpdir}/${filename}"_*.png ${docsdir}/${docsstaticdir}/
+mv "${TMPDIR}/${FILENAME}.rst" ${DOCS_DIR}/
+mv "${TMPDIR}/${FILENAME}"_*.png ${DOCS_DIR}/${DOCS_STATIC_DIR}/
 
-rmdir "${tmpdir}"
+rmdir "${TMPDIR}"
