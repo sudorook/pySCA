@@ -24,6 +24,7 @@ set -euo pipefail
 PFAMURL="ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files"
 PFAMHEADERS="pfamseq.sql"
 PFAMDATA="pfamseq.txt"
+PFAMMD5="md5_checksums"
 PFAMDB="pfamseq.db"
 
 GZIP=pigz  # replace this value with whatever GZIP compression tool you use
@@ -40,6 +41,8 @@ echo "Downloading the Pfam annotated sequence data."
 
 wget -Nc "${PFAMURL}/${PFAMHEADERS}.gz"
 wget -Nc "${PFAMURL}/${PFAMDATA}.gz"
+wget -Nc "${PFAMURL}/${PFAMMD5}"
+! grep "\s\+${PFAMHEADERS}\|\s\+${PFAMDATA}" "${PFAMMD5}" | md5sum -c - && exit 3
 echo "Got 'em."
 
 echo "Decompress the gzipped files."
