@@ -13,7 +13,7 @@ setup(
     description="Python 3 implementation of Statistical Coupling Analysis (SCA)",
     url="https://sudorook.gitlab.io/pySCA",
     download_url="https://github.com/sudorook/pySCA",
-    long_description=open("README.md", "r").read(),
+    long_description=open("README.md", "r", encoding="utf-8").read(),
     install_requires=[
         "biopython",
         "numpy",
