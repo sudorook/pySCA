@@ -21,11 +21,11 @@ set -euo pipefail
 # Globals
 #
 
-PFAMURL="ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files"
-PFAMHEADERS="pfamseq.sql"
-PFAMDATA="pfamseq.txt"
-PFAMMD5="md5_checksums"
-PFAMDB="pfamseq.db"
+PFAM_URL="ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files"
+PFAM_HEADERS="pfamseq.sql"
+PFAM_DATA="pfamseq.txt"
+PFAM_MD5="md5_checksums"
+PFAM_DB="pfamseq.db"
 
 GZIP=pigz  # replace this value with whatever GZIP compression tool you use
 
@@ -39,17 +39,17 @@ echo "Requires ~90 GB of free storage and could take several hours."
 
 echo "Downloading the Pfam annotated sequence data."
 
-wget -Nc "${PFAMURL}/${PFAMHEADERS}.gz"
-wget -Nc "${PFAMURL}/${PFAMDATA}.gz"
-wget -Nc "${PFAMURL}/${PFAMMD5}"
-! grep "\s\+${PFAMHEADERS}\|\s\+${PFAMDATA}" "${PFAMMD5}" | md5sum -c - && exit 3
+wget -Nc "${PFAM_URL}/${PFAM_HEADERS}.gz"
+wget -Nc "${PFAM_URL}/${PFAM_DATA}.gz"
+wget -Nc "${PFAM_URL}/${PFAM_MD5}"
+! grep "\s\+${PFAM_HEADERS}\|\s\+${PFAM_DATA}" "${PFAM_MD5}" | md5sum -c - && exit 3
 echo "Got 'em."
 
 echo "Decompress the gzipped files."
 echo "This will take a while."
 if test "$(command -v ${GZIP})"; then
-  ${GZIP} -vd "${PFAMHEADERS}.gz"
-  ${GZIP} -vd "${PFAMDATA}.gz"
+  ${GZIP} -vd "${PFAM_HEADERS}.gz"
+  ${GZIP} -vd "${PFAM_DATA}.gz"
 else
   echo "${GZIP} not found. Exiting."
   exit 3
@@ -65,10 +65,10 @@ echo "Done!"
 # converted to a format compatible with SQLite3.
 
 echo "Converting the MySQL dump to SQLite3."
-./mysql2sqlite "${PFAMHEADERS}" | sqlite3 "${PFAMDB}"
+./mysql2sqlite "${PFAM_HEADERS}" | sqlite3 "${PFAM_DB}"
 
 echo "Importing data."
-sqlite3 -batch "${PFAMDB}" << EOF
+sqlite3 -batch "${PFAM_DB}" << EOF
 .separator "\t"
 .import pfamseq.txt pfamseq
 EOF
