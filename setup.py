@@ -18,7 +18,6 @@ setup(
         "biopython",
         "numpy",
         "scipy",
-        "argparse",
         "wheel",
         "matplotlib",
     ],
