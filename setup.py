@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-""" Installation and setup for pySCA"""
+"""Installation and setup for pySCA"""
 
 from setuptools import setup
 
@@ -16,20 +16,20 @@ setup(
     long_description=open("README.md", "r", encoding="utf-8").read(),
     install_requires=[
         "biopython",
+        "matplotlib",
         "numpy",
         "scipy",
         "wheel",
-        "matplotlib",
     ],
     scripts=[
         "bin/alnChangeDelim",
+        "bin/alnConvertGI",
         "bin/alnFilterSeqSize",
         "bin/alnParseID",
-        "bin/annotateMSA",
-        "bin/scaProcessMSA",
-        "bin/alnConvertGI",
         "bin/alnReplaceHeaders",
+        "bin/annotateMSA",
         "bin/scaCore",
+        "bin/scaProcessMSA",
         "bin/scaSectorID",
     ],
 )

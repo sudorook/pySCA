@@ -308,7 +308,7 @@ def AnnotPfamDB(
     print("Elapsed time: %.1f min" % ((end_time - start_time) / 60))
 
 
-def EsummaryLookup(id_list, bad_list = [], email=settings.entrezemail):
+def EsummaryLookup(id_list, bad_list=[], email=settings.entrezemail):
     """
     Wrapper function for looking up taxonomy IDs from the NCBI protein
     database. If an ID isn't found, the web query returns with an error, so
@@ -330,12 +330,12 @@ def EsummaryLookup(id_list, bad_list = [], email=settings.entrezemail):
         handle.close()
     except RuntimeError as e:
         print(e, file=sys.stderr)
-        bad_id=str(e).split(" ")[2]
+        bad_id = str(e).split(" ")[2]
         bad_list.append(bad_id)
-        bad_idx=id_list.index(bad_id)
+        bad_idx = id_list.index(bad_id)
         id_list.remove(bad_id)
         taxon_list, bad_list = EsummaryLookup(id_list, bad_list)
-        taxon_list.insert(bad_idx, {'TaxId': 1})
+        taxon_list.insert(bad_idx, {"TaxId": 1})
     return taxon_list, bad_list
 
 
@@ -398,7 +398,9 @@ def AnnotNCBI(
                 taxIDs.append("1")
     end = time.time()
 
-    print("The following NCBI IDs could not be found in the taxonomy database:")
+    print(
+        "The following NCBI IDs could not be found in the taxonomy database:"
+    )
     print(bad_ids)
 
     # Add back taxID of 1 (the root of the taxonomic tree) for sequences
@@ -1378,7 +1380,7 @@ def scaMat(alg, seqw=1, norm="frob", lbda=0, freq0=np.ones(20) / 21):
                 tildeC[N_aa * i : N_aa * (i + 1), N_aa * j : N_aa * (j + 1)]
             )
             Cspec[i, j] = s[0]
-            Cfrob[i, j] = np.sqrt(sum(s ** 2))
+            Cfrob[i, j] = np.sqrt(sum(s**2))
             P[i, j, :] = np.sign(np.mean(u[:, 0])) * u[:, 0]
             P[j, i, :] = np.sign(np.mean(u[:, 0])) * vt[0, :].T
     Cspec += np.triu(Cspec, 1).T
@@ -1391,8 +1393,8 @@ def scaMat(alg, seqw=1, norm="frob", lbda=0, freq0=np.ones(20) / 21):
     ProjMat = np.zeros((N_pos, N_aa))
     for i in range(N_pos):
         Projati = Proj[N_aa * i : N_aa * (i + 1)]
-        if sum(Projati ** 2) > 0:
-            Projati /= np.sqrt(sum(Projati ** 2))
+        if sum(Projati**2) > 0:
+            Projati /= np.sqrt(sum(Projati**2))
         ProjMat[i, :] = Projati
         tX[:, i] = al2d[:, N_aa * i : N_aa * (i + 1)].dot(Projati.T)
     if norm == "frob":
@@ -1459,8 +1461,8 @@ def projAlg(alg, Proj):
     ProjMat = np.zeros((N_pos, N_aa))
     for i in range(N_pos):
         Projati = Proj[N_aa * i : N_aa * (i + 1)]
-        if sum(Projati ** 2) > 0:
-            Projati /= np.sqrt(sum(Projati ** 2))
+        if sum(Projati**2) > 0:
+            Projati /= np.sqrt(sum(Projati**2))
         ProjMat[i, :] = Projati
         tX[:, i] = al2d[:, N_aa * i : N_aa * (i + 1)].dot(Projati.T)
     return tX
@@ -1857,7 +1859,7 @@ class Secton:
         self.num = len(positions)
 
     def dist(self, distmat):
-        """ returns the distance between the position pair"""
+        """returns the distance between the position pair"""
         return distmat[np.ix_(self.pos, self.pos)]
 
     def connected(self, distmat, threshold):
@@ -1871,7 +1873,7 @@ class Secton:
         return (
             np.linalg.matrix_power(self.dist(distmat) < threshold, self.num)
             > 0
-        ).sum() / self.num ** 2 == 1
+        ).sum() / self.num**2 == 1
 
 
 ##########################################################################
