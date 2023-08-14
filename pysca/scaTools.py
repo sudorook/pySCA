@@ -512,7 +512,7 @@ def MSAsearch(hd, algn, seq, species=None):
     if species is not None:
         species = species.lower()
         key_list = list()
-        for (i, h) in enumerate(hd):
+        for i, h in enumerate(hd):
             if species in h.lower():
                 key_list.append(i)
         hd = [hd[k] for k in key_list]

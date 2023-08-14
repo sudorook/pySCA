@@ -64,9 +64,9 @@ scaProcessMSA \
   -c E \
   -d ${OUTPUT_DIR} \
   -t -n 2>&1 | tee -a ${OUTPUT_DIR}/s1A_halabi.log
-scaCore -i ${OUTPUT_DIR}/s1Ahalabi_1470_nosnakes.db 2>&1 | \
+scaCore -i ${OUTPUT_DIR}/s1Ahalabi_1470_nosnakes.db 2>&1 |
   tee -a ${OUTPUT_DIR}/s1A_halabi.log
-scaSectorID -i ${OUTPUT_DIR}/s1Ahalabi_1470_nosnakes.db 2>&1 | \
+scaSectorID -i ${OUTPUT_DIR}/s1Ahalabi_1470_nosnakes.db 2>&1 |
   tee -a ${OUTPUT_DIR}/s1A_halabi.log
 echo
 
@@ -80,9 +80,9 @@ scaProcessMSA \
   -d ${OUTPUT_DIR} \
   -f 'Escherichia coli' \
   -t -n 2>&1 | tee -a ${OUTPUT_DIR}/PF13354.log
-scaCore -i ${OUTPUT_DIR}/PF13354_full.db 2>&1 | \
+scaCore -i ${OUTPUT_DIR}/PF13354_full.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF13354.log
-scaSectorID -i ${OUTPUT_DIR}/PF13354_full.db 2>&1 | \
+scaSectorID -i ${OUTPUT_DIR}/PF13354_full.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF13354.log
 echo
 
@@ -99,9 +99,9 @@ scaProcessMSA \
   -d ${OUTPUT_DIR} \
   -f 'Homo sapiens' \
   -t -n 2>&1 | tee -a ${OUTPUT_DIR}/PF00071.log
-scaCore -i ${OUTPUT_DIR}/PF00071_full.db 2>&1 | \
+scaCore -i ${OUTPUT_DIR}/PF00071_full.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF00071.log
-scaSectorID -i ${OUTPUT_DIR}/PF00071_full.db 2>&1 | \
+scaSectorID -i ${OUTPUT_DIR}/PF00071_full.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF00071.log
 echo
 
@@ -114,9 +114,9 @@ scaProcessMSA \
   -d ${OUTPUT_DIR} \
   -f 'Homo sapiens' \
   -t -n 2>&1 | tee -a ${OUTPUT_DIR}/PF00071_rd2.log
-scaCore -i ${OUTPUT_DIR}/PF00071_rd2.db 2>&1 | \
+scaCore -i ${OUTPUT_DIR}/PF00071_rd2.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF00071_rd2.log
-scaSectorID -i ${OUTPUT_DIR}/PF00071_rd2.db 2>&1 | \
+scaSectorID -i ${OUTPUT_DIR}/PF00071_rd2.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF00071_rd2.log
 echo
 
@@ -132,9 +132,9 @@ scaProcessMSA \
   -d ${OUTPUT_DIR} \
   -f 'Escherichia coli' \
   -t -n 2>&1 | tee -a ${OUTPUT_DIR}/PF00186.log
-scaCore -i ${OUTPUT_DIR}/PF00186_full.db 2>&1 | \
+scaCore -i ${OUTPUT_DIR}/PF00186_full.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF00186.log
-scaSectorID -i ${OUTPUT_DIR}/PF00186_full.db 2>&1 | \
+scaSectorID -i ${OUTPUT_DIR}/PF00186_full.db 2>&1 |
   tee -a ${OUTPUT_DIR}/PF00186.log
 echo
 
@@ -146,7 +146,7 @@ scaProcessMSA \
   -c A \
   -d ${OUTPUT_DIR} \
   -t -n 2>&1 | tee -a ${OUTPUT_DIR}/DHFR_PEPM3.log
-scaCore -i ${OUTPUT_DIR}/DHFR_PEPM3.db 2>&1 | \
+scaCore -i ${OUTPUT_DIR}/DHFR_PEPM3.db 2>&1 |
   tee -a ${OUTPUT_DIR}/DHFR_PEPM3.log
-scaSectorID -i ${OUTPUT_DIR}/DHFR_PEPM3.db 2>&1 | \
+scaSectorID -i ${OUTPUT_DIR}/DHFR_PEPM3.db 2>&1 |
   tee -a ${OUTPUT_DIR}/DHFR_PEPM3.log

@@ -29,7 +29,6 @@ PFAM_DB="pfamseq.db"
 
 GZIP=pigz  # replace this value with whatever GZIP compression tool you use
 
-
 #
 # Download and extract the data
 #
@@ -55,7 +54,6 @@ else
   exit 3
 fi
 echo "Done!"
-
 
 #
 # Create the database

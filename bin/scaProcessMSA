@@ -356,8 +356,8 @@ if __name__ == "__main__":
                     sequences_full, ats_pdb, seq_pdb, i_ref, options.truncate
                 )
                 dist_new = np.zeros((len(ats), len(ats)))
-                for (j, pos1) in enumerate(ats):
-                    for (k, pos2) in enumerate(ats):
+                for j, pos1 in enumerate(ats):
+                    for k, pos2 in enumerate(ats):
                         if k != j:
                             if (pos1 == "-") or (pos2 == "-"):
                                 dist_new[j, k] == 1000
