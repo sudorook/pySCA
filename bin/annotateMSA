@@ -1,6 +1,10 @@
-#! /usr/bin/env python
-"""
-The annotateMSA script provides utilities to automatically annotate sequence
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2019 - 2023 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+"""The annotateMSA script provides utilities to automatically annotate sequence
 headers (for a FASTA file) with taxonomic information. Currently this can be
 done in one of two ways:
 

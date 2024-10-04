@@ -1,6 +1,10 @@
-#! /usr/bin/env python
-"""
-The scaProcessMSA script conducts the basic steps in multiple sequence
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2019 - 2023 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+"""The scaProcessMSA script conducts the basic steps in multiple sequence
 alignment (MSA) pre-processing for SCA, and stores the results using the python
 tool pickle:
 

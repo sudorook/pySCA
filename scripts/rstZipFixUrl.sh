@@ -1,4 +1,9 @@
-#! /bin/bash
+#!/bin/bash
+
+# SPDX-FileCopyrightText: 2019 - 2021 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 set -eu
 
 #

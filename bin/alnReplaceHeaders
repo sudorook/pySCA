@@ -1,6 +1,10 @@
 #!/usr/bin/env python
-"""
-A script that replaces the headers of one FASTA file with headers from another.
+
+# SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+"""A script that replaces the headers of one FASTA file with headers from another.
 It assumes the sequences in the two FASTA files are in identical order. This is
 useful, for example, when working with Promals3D alignments (which often have
 the header information truncated).

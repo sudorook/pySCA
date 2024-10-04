@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full

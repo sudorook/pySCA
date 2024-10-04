@@ -1,4 +1,9 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2019 - 2023 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 """
 The scaCore script runs the core calculations for SCA, and stores the output
 using the Python tool pickle. These calculations can be divided into two parts:

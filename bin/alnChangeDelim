@@ -1,6 +1,10 @@
-#! /usr/bin/env python
-"""
-A script to change the field delimiter of a multiple sequence alignment (FASTA
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+"""A script to change the field delimiter of a multiple sequence alignment (FASTA
 format).
 
 **Arguments**

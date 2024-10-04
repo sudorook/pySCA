@@ -1,6 +1,10 @@
-#! /usr/bin/env python
-"""
-The scaSectorID script does the preliminaries of sector identification and
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+"""The scaSectorID script does the preliminaries of sector identification and
 stores the outputs using the python tool pickle:
 
     1) Chooses :math:`k_{max}` (the number of significant eigenmodes) by

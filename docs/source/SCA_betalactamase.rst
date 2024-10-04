@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+..
+.. SPDX-License-Identifier: BSD-3-Clause
+
 SCA 6.2 - The Beta-lactamase Enzyme Family
 ==========================================
 

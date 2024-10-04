@@ -1,4 +1,9 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 """ Global settings for pySCA. """
 
 #

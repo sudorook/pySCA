@@ -1,4 +1,9 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2019 - 2023 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 """
 pySCA - A SCA toolbox in Python
 

@@ -1,6 +1,10 @@
-#! /usr/bin/env python
-"""
-A script to convert GI numbers in the header of a FASTA file to accession
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+"""A script to convert GI numbers in the header of a FASTA file to accession
 numbers.
 
 **Arguments**

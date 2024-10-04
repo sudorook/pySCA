@@ -1,4 +1,9 @@
-#! /bin/bash
+#!/bin/bash
+
+# SPDX-FileCopyrightText: 2019 - 2023 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 set -euo pipefail
 
 #

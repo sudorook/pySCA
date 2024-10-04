@@ -1,6 +1,10 @@
-#! /usr/bin/env python
-"""
-A basic script to filter a fasta file of sequences by size - a useful step to
+#!/usr/bin/env python
+
+# SPDX-FileCopyrightText: 2019 - 2020 sudorook <daemon@nullcodon.com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+"""A basic script to filter a fasta file of sequences by size - a useful step to
 remove partial sequences or sequences that would potentially introduce a large
 number of gaps in the alignment. This script reads in the alignment, computes
 the average sequence length, and outputs a new alignment that keeps sequences
