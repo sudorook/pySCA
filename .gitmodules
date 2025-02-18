@@ -1,3 +1,6 @@
 [submodule "data"]
 	path = data
 	url = git@gitlab.com:sudorook/pySCA-data.git
+[submodule "scripts/mysql2sqlite"]
+	path = scripts/mysql2sqlite
+	url = https://github.com/mysql2sqlite/mysql2sqlite

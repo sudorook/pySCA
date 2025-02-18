@@ -34,6 +34,8 @@ PFAM_DB="pfamseq.db"
 
 GZIP=pigz  # replace this value with whatever GZIP compression tool you use
 
+git submodule update --init mysql2sqlite
+
 #
 # Download and extract the data
 #
@@ -68,7 +70,7 @@ echo "Done!"
 # converted to a format compatible with SQLite3.
 
 echo "Converting the MySQL dump to SQLite3."
-./mysql2sqlite "${PFAM_HEADERS}" | sqlite3 "${PFAM_DB}"
+./mysql2sqlite/mysql2sqlite "${PFAM_HEADERS}" | sqlite3 "${PFAM_DB}"
 
 echo "Importing data."
 sqlite3 -batch "${PFAM_DB}" << EOF
