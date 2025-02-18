@@ -32,7 +32,7 @@ PFAM_DATA="pfamseq.txt"
 PFAM_MD5="md5_checksums"
 PFAM_DB="pfamseq.db"
 
-GZIP=pigz  # replace this value with whatever GZIP compression tool you use
+GZIP="${GZIP:-pigz}"  # replace this value with whatever GZIP compression tool you use
 
 git submodule update --init mysql2sqlite
 
@@ -40,10 +40,12 @@ git submodule update --init mysql2sqlite
 # Download and extract the data
 #
 
-echo "Downloading the Pfam database files and generate a SQLite3 database."
-echo "Requires ~90 GB of free storage and could take several hours."
+cat << EOF
+Downloading the Pfam database files and generate a SQLite3 database.
+Requires ~90 GB of free storage and could take several hours.
 
-echo "Downloading the Pfam annotated sequence data."
+Downloading the Pfam annotated sequence data.
+EOF
 
 wget -Nc "${PFAM_URL}/${PFAM_HEADERS}.gz"
 wget -Nc "${PFAM_URL}/${PFAM_DATA}.gz"
@@ -51,8 +53,7 @@ wget -Nc "${PFAM_URL}/${PFAM_MD5}"
 ! grep "\s\+${PFAM_HEADERS}\|\s\+${PFAM_DATA}" "${PFAM_MD5}" | md5sum -c - && exit 3
 echo "Got 'em."
 
-echo "Decompress the gzipped files."
-echo "This will take a while."
+echo "Decompress the gzipped files. This will take a while...."
 if test "$(command -v ${GZIP})"; then
   ${GZIP} -vd "${PFAM_HEADERS}.gz"
   ${GZIP} -vd "${PFAM_DATA}.gz"
