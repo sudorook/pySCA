@@ -111,6 +111,9 @@ flycheck_*.el
 # network security
 /network-security.data
 
+# undo-tree
+*.~undo-tree~
+
 #
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/Global/Linux.gitignore
 #
@@ -181,7 +184,8 @@ Temporary Items
 
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+# comment out the next line if you don't need vector files
+!*.svg
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -234,7 +238,7 @@ $RECYCLE.BIN/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
+*.py[codz]
 *$py.class
 
 # C extensions
@@ -364,6 +368,7 @@ celerybeat.pid
 
 # Environments
 .env
+.envrc
 .venv
 env/
 venv/
@@ -427,6 +432,11 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
 
 #
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/community/Python/JupyterNotebooks.gitignore
