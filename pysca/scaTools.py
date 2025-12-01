@@ -322,7 +322,7 @@ def EsummaryLookup(id_list, bad_list=[], email=settings.entrezemail):
     """
 
     # If all IDs are bad, they will be recursively pruned until the list is
-    # empty. Reutrn immediately if that happens.
+    # empty. Return immediately if that happens.
     if len(id_list) == 0:
         return id_list, bad_list
 
