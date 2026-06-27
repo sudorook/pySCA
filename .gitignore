@@ -45,11 +45,23 @@
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/Global/Backup.gitignore
 #
 
+# Generic backup files
 *.bak
+*.back
+*.backup
+
+# Norton Ghost backup files
 *.gho
+
+# Generic original files
 *.ori
 *.orig
+*.original
+
+# Generic temporary files
 *.tmp
+*.temp
+*.temporary
 
 #
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/Global/Diff.gitignore
@@ -479,6 +491,17 @@ tags
 
 # Virtualenv
 # https://realpython.com/python-virtual-environments-a-primer/#the-virtualenv-project
+.venv/
+venv/
+.python-version
+
+# pyenv: Simple Python Version Management
+pyvenv.cfg
+
+# pip: package installer for Python
+pip-selfcheck.json
+
+# Custom python interpreter
 .Python
 [Bb]in
 [Ii]nclude
@@ -486,9 +509,6 @@ tags
 [Ll]ib64
 [Ll]ocal
 [Ss]cripts
-pyvenv.cfg
-.venv
-pip-selfcheck.json
 
 #
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/VisualStudio.gitignore
