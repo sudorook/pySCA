@@ -6,7 +6,7 @@ pages:
     - apt-get upgrade -y
     - apt-get install -y python3 python3-numpy python3-scipy python3-biopython python3-pip python3-matplotlib python3-sphinx python3-sphinx-rtd-theme
     - apt-get install -y make
-    - pip3 install .
+    - pip3 install --break-system-packages .
     - mkdir -p docs/modules
     - for file in bin/*; do cp "${file}" "docs/modules/`basename $file`.py"; done
     - cp pysca/scaTools.py docs/modules
